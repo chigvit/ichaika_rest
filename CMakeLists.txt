@@ -13,6 +13,9 @@ add_executable(${PROJECT_NAME} ${SRC} src/main.cpp)
 
 find_package(Drogon CONFIG REQUIRED PATHS /usr/local/lib64/cmake/Drogon)
 
+# Добавляем опцию для статической сборки
+set(DROGON_STATIC ON CACHE BOOL "Build Drogon statically")
+
 target_link_libraries(${PROJECT_NAME} PRIVATE Drogon::Drogon)
 
 # *** Unit tests ***
